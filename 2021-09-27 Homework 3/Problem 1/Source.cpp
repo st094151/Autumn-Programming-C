@@ -9,7 +9,8 @@ int main(int argc, char* argv[])
 
 	cin >> n;
 
-	for (int i = 1; i <= n; ++i) {
+	for (int i = 1; i <= n; ++i)
+	{
 		result *= i;
 	}
 

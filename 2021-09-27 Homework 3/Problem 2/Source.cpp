@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
 	for (int i = 1; i <= n; ++i)
 	{
 		result *= 2;
-		}
+	}
 
 	cout << result << endl;
 

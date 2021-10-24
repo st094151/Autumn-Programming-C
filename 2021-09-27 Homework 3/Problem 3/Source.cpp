@@ -18,14 +18,16 @@ int main(int argc, char* argv[])
 			cout << i << " ";
 			++j;
 			++i;
-			if (i == n + 1) {
+			if (i == n + 1)
+			{
 				break;
 			}
 		}
 		++c;
 		j = 0;
 		cout << endl;
-		if (i == n + 1) {
+		if (i == n + 1)
+		{
 			break;
 		}
 	}

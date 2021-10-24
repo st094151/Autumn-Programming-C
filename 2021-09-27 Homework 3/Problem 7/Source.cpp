@@ -14,7 +14,8 @@ int main(int argc, char* argv[])
 	for (int i = 0; i <= 1000; ++i)
 	{
 		int result = a * i * i * i + b * i * i + c * i + d;
-		if (result == 0) {
+		if (result == 0)
+		{
 			cout << i << " ";
 		}
 	}
