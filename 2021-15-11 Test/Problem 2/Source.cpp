@@ -4,20 +4,30 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-	char k = 0;
-	int n = k;
+	int k = 0;
 	int max = 0;
 	int min = 0;
 	int i = 0;
 	int result = 0;
+	bool isfirst = true;
+	bool issecond = true;
 
-	char str[200000] = { "" };
-
-	while (k != ' \0')
+	while (cin >> k)
 	{
-		cin >> k;
-		n = k;
 		++i;
+		if (isfirst)
+		{
+			min = k;
+			isfirst = false;
+		}
+
+		if ((issecond) && (i == 2))
+		{
+			max = k;
+			issecond = false;
+		}
+
+
 		if (i % 2 == 0)
 		{
 			if (k > max)
