@@ -83,7 +83,7 @@ int LinkedList::extract(int index)
     {
         return popHead();
     }
-    else if (index >= count)
+    else if (index >= count - 1)
     {
         return popTail();
     }
@@ -221,4 +221,89 @@ int LinkedList::popTail()
     tail->next = nullptr;
 
     return value;
+}
+
+void LinkedList::RemovingIdentical()
+{
+    Node* temp1 = head;
+    Node* temp2 = head;
+
+    int i = 0;
+
+    while (temp1->next != nullptr)
+    {
+        bool removed = false;
+        temp2 = head;
+
+        while (temp2 != temp1)
+        {
+            if (temp2->data == temp1->next->data)
+            {
+                extract(i + 1);
+                removed = true;
+                break;
+            }
+
+            temp2 = temp2->next;
+        }
+        
+        if (!removed)
+        {
+            temp1 = temp1->next;
+            ++i;
+        }
+        
+        
+    }
+
+    temp2 = head;
+
+    while (temp2->next != tail)
+    {
+        if (temp2->data == tail->data)
+        {
+            popTail();
+            break;
+
+        }
+
+        temp2 = temp2->next;
+    }
+
+    if (head != tail)
+    {
+        if (head->data == head->next->data)
+        {
+            popHead();
+        }
+    }
+    
+/*
+    while (temp1->next != nullptr)
+    {
+        int j = i;
+
+        temp2 = temp1->next;
+
+        while (temp2->next != nullptr)
+        {
+            if ( (temp1->next->next == nullptr) && (temp2->data == temp1->data) )
+            {
+                extract(j + 1);
+            }
+            if (temp2->next->data == temp1->data)
+            {
+                extract(j + 2);
+            }
+            else
+            {
+                temp2 = temp2->next;
+                ++j;
+            }
+        }
+
+        temp1 = temp1->next;
+        ++i;
+    }
+*/
 }

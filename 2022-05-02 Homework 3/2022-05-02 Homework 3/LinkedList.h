@@ -38,6 +38,7 @@ public:
 	int popHead();
 	int popTail();
 
+	void RemovingIdentical();
+
 	friend std::ostream& operator<<(std::ostream& stream, const LinkedList& list);
 };
-
